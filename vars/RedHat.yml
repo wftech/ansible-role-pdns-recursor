@@ -1,0 +1,5 @@
+---
+__pdns_config_file: /etc/pdns-recursor/recursor.conf
+__pdns_service_name: pdns-recursor
+__pdns_uid: pdns-recursor
+__pdns_gid: pdns-recursor

@@ -1,0 +1,15 @@
+---
+pdns_upstream_servers:
+  - 8.8.8.8
+
+pdns_recursor_export_etc_hosts: false
+
+pdns_local_addresses:
+  - 127.0.0.1
+
+pdns_local_port: 53
+#
+pdns_package_name: 'pdns-recursor'
+
+# default
+pdns_config_dir: ~

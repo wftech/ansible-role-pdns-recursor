@@ -1,0 +1,33 @@
+---
+- include: setup-RedHat.yml
+  when: ansible_os_family == "RedHat"
+
+- name: Get OS default values
+  include_vars: '{{ ansible_os_family }}.yml'
+
+- name: Set fact
+  set_fact:
+    pdns_config_file: '{{ pdns_config_file|default(__pdns_config_file) }}'
+    pdns_service_name: '{{ pdns_service_name|default(__pdns_service_name) }}'
+    pdns_uid: '{{ pdns_uid|default(__pdns_uid) }}'
+    pdns_gid: '{{ pdns_gid|default(__pdns_gid) }}'
+
+- name: Add pdns-recursor
+  package:
+    name: pdns-recursor
+    state: present
+
+- name: Provide pdns-recursor config
+  template:
+    src: pdns-recursor.conf.j2
+    dest: '{{ pdns_config_file }}'
+    backup: true
+  notify: restart pdns-recursor
+
+- name: Start pdns-recursor
+  service:
+    name: pdns-recursor
+    state: started
+    enabled: true
+
+- meta: flush_handlers

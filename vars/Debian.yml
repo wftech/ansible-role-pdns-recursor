@@ -1,0 +1,5 @@
+---
+__pdns_config_file: /etc/powerdns/recursor.conf
+__pdns_service_name: pdns-recursor
+__pdns_uid: pdns
+__pdns_gid: pdns

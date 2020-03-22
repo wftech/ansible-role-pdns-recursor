@@ -1,0 +1,6 @@
+---
+- name: Assert we're on CentOS nodes
+  assert:
+    that:
+      - ansible_distribution == 'CentOS'
+      - ansible_distribution_major_version == '7'
