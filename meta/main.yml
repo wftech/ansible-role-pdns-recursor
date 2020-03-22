@@ -1,6 +1,6 @@
 ---
-
 galaxy_info:
+  role_name: wftech.pdns-recursor
   author: Veros Kaplan <verosk@noreply.users.github.com>
   description: Ansible Role for pdns recursor setup
   company: N/A
@@ -20,4 +20,5 @@ galaxy_info:
   galaxy_tags:
     - system
     - docker
+
 dependencies: []
