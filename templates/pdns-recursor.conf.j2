@@ -25,9 +25,9 @@ forward-zones-recurse=.={{ [pdns_upstream_servers]|flatten|join(';') }}
 #################################
 # setgid        If set, change group id to this gid for more security
 #
-setgid=pdns-recursor
+setgid={{ pdns_gid }}
 
 #################################
 # setuid        If set, change user id to this uid for more security
 #
-setuid=pdns-recursor
+setuid={{ pdns_uid }}
