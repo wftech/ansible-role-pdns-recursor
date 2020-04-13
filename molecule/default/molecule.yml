@@ -6,8 +6,6 @@ driver:
 lint: |
    set -e
    yamllint . molecule/default/yaml-lint.yml
-   #ansible-lint
-   #flake8
 platforms:
   - name: "molecule-${MOLECULE_DISTRO:-centos7}"
     image: "geerlingguy/docker-${MOLECULE_DISTRO:-centos7}-ansible:latest"
