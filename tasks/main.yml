@@ -9,10 +9,10 @@
     pdns_uid: '{{ pdns_uid|default(__pdns_uid) }}'
     pdns_gid: '{{ pdns_gid|default(__pdns_gid) }}'
 
-- include: setup-RedHat.yml
+- include_tasks: setup-RedHat.yml
   when: ansible_os_family == "RedHat"
 
-- include: setup-Debian.yml
+- include_tasks: setup-Debian.yml
   when: ansible_os_family == "Debian"
 
 - name: Provide pdns-recursor config
