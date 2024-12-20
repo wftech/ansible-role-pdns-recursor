@@ -29,3 +29,6 @@
     enabled: true
 
 - meta: flush_handlers
+
+- include_tasks: setup-fake-resolv-conf.yml
+  when: pdns_create_fake_resolv_conf

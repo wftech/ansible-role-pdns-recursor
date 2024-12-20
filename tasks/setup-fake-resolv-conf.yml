@@ -1,0 +1,8 @@
+
+- name: Create fake resolv.conf
+  template:
+    src: fake-resolv.conf.j2
+    dest: '{{ pdns_fake_resolv_conf }}'
+    owner: root
+    group: root
+    mode: 0644
